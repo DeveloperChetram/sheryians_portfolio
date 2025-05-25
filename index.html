@@ -14,182 +14,209 @@
 <body class="overflow-x-hidden">
     <!-- <img src="4 <img src="">  " alt=""> -->
     <main class="w-full  flex flex-col items-center k ">
-        <section class="nav w-5/6 h-24  ">
-            <nav class="h-10 mt-5 w-full flex justify-between items-center font-semibold text-base" <div class="logo">
-                <p> Portfolio</p>
+        <section class="nav w-11/12 md:w-5/6 h-24  ">
+            <nav class="h-10 mt-5 w-full flex justify-between items-center font-semibold text-base">
+                <div class="logo">
+                    <p>Portfolio</p>
                 </div>
-                <div class=" flex justify-between w-2/5 ">
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <!-- Desktop menu -->
+                <div class="hidden md:flex justify-between w-2/5">
                     <li class="list-none">Home</li>
-                    <li class="list-none opacity-50 ">Social</li>
-                    <li class="list-none opacity-50 ">Projects</li>
-                    <li class="list-none opacity-50 ">Contact</li>
+                    <li class="list-none opacity-50">Social</li>
+                    <li class="list-none opacity-50">Projects</li>
+                    <li class="list-none opacity-50">Contact</li>
                 </div>
             </nav>
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden w-full" id="mobile-menu">
+                <div class="flex flex-col space-y-4 py-4">
+                    <li class="list-none">Home</li>
+                    <li class="list-none opacity-50">Social</li>
+                    <li class="list-none opacity-50">Projects</li>
+                    <li class="list-none opacity-50">Contact</li>
+                </div>
+            </div>
         </section>
 
-        <section class="w-5/6 mt-10">
+        <section class="w-11/12 md:w-5/6 mt-10">
             <div class="w-full h-full">
-                <div class="heading flex justify-between w-full items-end">
+                <div class="heading flex flex-col md:flex-row justify-between w-full items-end">
                     <div>
                         <h1 class="text-lg font-bold">Hello, I am <br><span
-                                class="text-6xl -m-1 font-bold ">Changu.</span></h1>
+                                class="text-4xl md:text-6xl -m-1 font-bold">Changu.</span></h1>
                     </div>
-                    <div class="flex ">
+                    <div class="flex mt-4 md:mt-0">
                         <p class="font-medium">[06:00]</p> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-                       <p> Creative Frontend Developer</p>
+                        <p class="font-medium">Creative Frontend Developer</p>
                     </div>
                 </div>
-                <div class="hero-div w-full h-2/3 mt-5  ">
+                <div class="hero-div w-full h-2/3 mt-5">
                     <img src="hero.jpg" class="hero object-cover w-full h-full object-top" alt="Hero image of the portfolio">
                 </div>
             </div>
         </section>
-        <section class=" icon-div w-5/6 flex justify-center ">
-            <div class=" flex justify-center flex-col items-center w-4/5 px-20 h-80  mt-10 relative">
-                <h1 class="mb-5 text-3xl font-bold"> [I design & build experiences]</h1>
-                <p class="text-para text-center font-medium"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt,
+        <section class="icon-div w-11/12 md:w-5/6 flex justify-center">
+            <div class="flex justify-center flex-col items-center w-full md:w-4/5 px-4 md:px-20 h-auto md:h-80 mt-10 relative">
+                <h1 class="mb-5 text-2xl md:text-3xl font-bold text-center">[I design & build experiences]</h1>
+                <p class="text-para text-center font-medium mb-16 md:mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt,
                     culpa reiciendis fugit doloremque aspernatur a voluptatum et hic error sint. Lorem ipsum dolor sit
                     amet, consectetur adipisicing elit. Nemo, asperiores pariatur. Asperiores, magnam rem.</p>
-                <img src="visual-studio-code.png" class="icon-1  absolute w-20 top-10 left-0 transform -rotate-12" alt="">
-                <img src="html.png" class="icon-2 absolute w-20 top-10 right-0 transform rotate-12" alt="">
-                <img src="css.png" class="icon-3 absolute w-20 bottom-0 left-60 transform -rotate-12" alt="">
-                <img src="javascript.png" class="icon-4 absolute w-20 bottom-0 right-60 transform rotate-12" alt="">
-
+                <div class="flex flex-row justify-between items-center w-full relative mt-auto md:mt-0 px-2 md:px-0">
+                    <img src="visual-studio-code.png" class="icon-1 w-10 md:w-20 transform -rotate-12 md:absolute md:top-10 md:left-0" alt="">
+                    <img src="html.png" class="icon-2 w-10 md:w-20 transform rotate-12 md:absolute md:top-10 md:right-0" alt="">
+                    <img src="css.png" class="icon-3 w-10 md:w-20 transform -rotate-12 md:absolute md:bottom-0 md:left-60" alt="">
+                    <img src="javascript.png" class="icon-4 w-10 md:w-20 transform rotate-12 md:absolute md:bottom-0 md:right-60" alt="">
+                </div>
             </div>
         </section>
-        <section class="page-2 w-5/6 ">
-           <div class="flex  items-center py-4 w-full mt-40 sticky top-0 bg-white z-[2]">
-            <h1 class="text-6xl font-medium ml-6">2017.</h1>
-            <div class="w-1/6 h-1 bg-black "></div>
-            <h1 class="text-6xl font-medium ">The Beginning</h1>
+        <section class="page-2 w-11/12 md:w-5/6 ">
+           <div class="flex flex-col md:flex-row items-center py-4 w-full mt-20 md:mt-40 sticky top-0 bg-white z-[2]">
+            <h1 class="text-4xl md:text-6xl font-medium ml-6">2017.</h1>
+            <div class="w-1/6 h-1 bg-black hidden md:block"></div>
+            <h1 class="text-4xl md:text-6xl font-medium">The Beginning</h1>
            </div>
-           <div class=" cards-1 flex mt-10">
-            <div class=" flex flex-col  w-1/3 p-7 gap-10">
-                <div class=" h-[60vh] bg-black  " > <img src="imgs (1).jpg" class="object-cover w-full h-full">  </div>
-                <div class=" h-[75vh] bg-black   " > <img src="imgs (2).jpg" class="object-cover w-full h-full">  </div>
+           <div class="cards-1 flex flex-col md:flex-row mt-10">
+            <div class="flex flex-col w-full md:w-1/3 p-4 md:p-7 gap-10">
+                <div class="h-[40vh] md:h-[60vh] bg-black"><img src="imgs (1).jpg" class="object-cover w-full h-full"></div>
+                <div class="h-[50vh] md:h-[75vh] bg-black"><img src="imgs (2).jpg" class="object-cover w-full h-full"></div>
             </div>
-            <div class=" w-1/3 pt-[100px]   p-7 gap-10">
-                <div class=" h-[80vh] bg-black   " >  <img src="imgs (3).jpg" class="object-cover w-full h-full">  </div>
-                <div class=" h-[38%]   bg-black   mt-10" ><img src="imgs (4).jpg" class="object-cover w-full h-full">    </div>
+            <div class="w-full md:w-1/3 pt-10 md:pt-[100px] p-4 md:p-7 gap-10">
+                <div class="h-[50vh] md:h-[80vh] bg-black"><img src="imgs (3).jpg" class="object-cover w-full h-full"></div>
+                <div class="h-[30vh] md:h-[38%] bg-black mt-10"><img src="imgs (4).jpg" class="object-cover w-full h-full"></div>
             </div>
-            <div class="flex flex-col  w-1/3 pt-[50px] p-7 gap-10">
-                <div class=" h-[37%] bg-black   " >  <img src="imgs (5).jpg" class="object-cover w-full h-full">  </div>
-                <div class=" h-[70vh] bg-black   " >  <img src="imgs (6).jpg" class="object-cover w-full h-full">  </div>
+            <div class="flex flex-col w-full md:w-1/3 pt-10 md:pt-[50px] p-4 md:p-7 gap-10">
+                <div class="h-[30vh] md:h-[37%] bg-black"><img src="imgs (5).jpg" class="object-cover w-full h-full"></div>
+                <div class="h-[50vh] md:h-[70vh] bg-black"><img src="imgs (6).jpg" class="object-cover w-full h-full"></div>
             </div>
            </div>
         </section>
-        <section class="page-3 w-5/6 mb-20 ">
-            <div class="flex  items-center py-4 w-full mt-40 sticky top-0 bg-white z-[2]">
-                <h1 class="text-6xl font-medium ml-6">2018.</h1>
-                <div class="w-1/6 h-1 bg-black "></div>
-                <h1 class="text-6xl font-medium ">The Escalation</h1>
+        <section class="page-3 w-11/12 md:w-5/6 mb-20 ">
+            <div class="flex flex-col md:flex-row items-center py-4 w-full mt-20 md:mt-40 sticky top-0 bg-white z-[2]">
+                <h1 class="text-4xl md:text-6xl font-medium ml-6">2018.</h1>
+                <div class="w-1/6 h-1 bg-black hidden md:block"></div>
+                <h1 class="text-4xl md:text-6xl font-medium">The Escalation</h1>
                </div>
-            <div class="cards-2 flex mt-10">
-             <div class=" flex flex-col  w-1/3 p-7 gap-10">
-                 <div class=" h-[60vh] bg-black   " > <img src="imgs (7).jpg" class="object-cover w-full h-full"></div>
-                 <div class=" h-[75vh] bg-black   " > <img src="imgs (8).jpg" class="object-cover w-full h-full"></div>
+            <div class="cards-2 flex flex-col md:flex-row mt-10">
+             <div class="flex flex-col w-full md:w-1/3 p-4 md:p-7 gap-10">
+                 <div class="h-[40vh] md:h-[60vh] bg-black"><img src="imgs (7).jpg" class="object-cover w-full h-full"></div>
+                 <div class="h-[50vh] md:h-[75vh] bg-black"><img src="imgs (8).jpg" class="object-cover w-full h-full"></div>
              </div>
-             <div class=" w-1/3 pt-[100px]   p-7 gap-10">
-                 <div class=" h-[80vh] bg-black   " > <img src="imgs (9).jpg" class="object-cover w-full h-full"></div>
-                 <div class=" h-[38%]   bg-black   mt-10" > <img src="imgs (10).jpg" class="object-cover w-full h-full"></div>
+             <div class="w-full md:w-1/3 pt-10 md:pt-[100px] p-4 md:p-7 gap-10">
+                 <div class="h-[50vh] md:h-[80vh] bg-black"><img src="imgs (9).jpg" class="object-cover w-full h-full"></div>
+                 <div class="h-[30vh] md:h-[38%] bg-black mt-10"><img src="imgs (10).jpg" class="object-cover w-full h-full"></div>
              </div>
-             <div class="flex flex-col  w-1/3 pt-[50px] p-7 gap-10">
-                 <div class=" h-[37%] bg-black   " > <img src="imgs (11).jpg" class="object-cover w-full h-full"></div>
-                 <div class=" h-[70vh] bg-black   " > <img src="imgs (12).jpg" class="object-cover w-full h-full"></div>
+             <div class="flex flex-col w-full md:w-1/3 pt-10 md:pt-[50px] p-4 md:p-7 gap-10">
+                 <div class="h-[30vh] md:h-[37%] bg-black"><img src="imgs (11).jpg" class="object-cover w-full h-full"></div>
+                 <div class="h-[50vh] md:h-[70vh] bg-black"><img src="imgs (12).jpg" class="object-cover w-full h-full"></div>
              </div>
             </div>
          </section>
        <div class="great-div">
         <section class=" great w-full pb-10 flex flex-col items-center relative  " >
-            <div class="w-full h-[400px] bg-blue-600      ">
+            <div class="w-full h-[300px] md:h-[400px] bg-blue-600      ">
                  <img src="dots bg.png"  class="object-cover w-full h-full" alt="">
             </div>
-            <div class="flex flex-col gap-10 absolute top-[25%]  w-[50%] ">
-                <h1 class="text-center font-medium text-3xl bg-white ">I am Great at</h1>
+            <div class="flex flex-col gap-10 absolute top-[25%]  w-[90%] md:w-[50%] ">
+                <h1 class="text-center font-medium text-2xl md:text-3xl bg-white ">I am Great at</h1>
                 <img src="icons.png" class="object-cover"  alt="">
             </div>
          </section >
 
        </div>
-        <section class="w-5/6 ">
+        <section class="w-11/12 md:w-5/6 ">
   <div  class="testi-div">
     <div  class="testi">
         <div>
-            <span class="text-3xl font-medium">Client</span>
+            <span class="text-2xl md:text-3xl font-medium">Client</span>
         </div>
-       <div class="w-full flex justify-between items-end ">
+       <div class="w-full flex flex-col md:flex-row justify-between items-end">
         <h1>
-            <span class="text-8xl font-bold"> Testimonials</span>
+            <span class="text-5xl md:text-8xl font-bold"> Testimonials</span>
         </h1>
-        <img src="arrow.png" class="w-[25%]" alt="">
-        <h1 class="text-8xl font-bold">Work</h1>
+        <img src="arrow.png" class="w-[50%] md:w-[25%]" alt="">
+        <h1 class="text-5xl md:text-8xl font-bold">Work</h1>
        </div>
     </div>
   </div>
         </section>
-        <section class="w-5/6 mt-40 brit-div">
-            <div class="w-full ">
-                <h1 class="brit-text text-5xl font-bold"> Britannia</h1>
+        <section class="w-11/12 md:w-5/6 mt-20 md:mt-40 brit-div">
+            <div class="w-full">
+                <h1 class="brit-text text-3xl md:text-5xl font-bold"> Britannia</h1>
                 <div class="brit-text flex mt-5">
                     <h1>
-                        <span class=" font-medium text-xl"> 2017</span>
+                        <span class="font-medium text-lg md:text-xl"> 2017</span>
                     </h1>
-                    <img src="arrow svg.svg" class="w-[5%]" alt="">
-                    <h1 class=" font-medium text-xl ">Mumbai</h1>
+                    <img src="arrow svg.svg" class="w-[10%] md:w-[5%]" alt="">
+                    <h1 class="font-medium text-lg md:text-xl ">Mumbai</h1>
                 </div >
-                <div class= "w-full bg-red h-[400px]">
+                <div class= "w-full bg-red h-[300px] md:h-[400px]">
                     <img src="flower.jpg" class=" brit-img object-cover w-full h-full mt-5" alt="">
                 </div>
             </div>
         </section>
 
-        <section class=" last-div w-5/6 mt-40">
-            <div class="flex  w-full justify-between">
-                <div class=" orange w-[25%]">
+        <section class=" last-div w-11/12 md:w-5/6 mt-20 md:mt-40">
+            <div class="flex flex-col md:flex-row w-full justify-between gap-10">
+                <div class="orange w-full md:w-[25%]">
                     <div class="w-full">
-                        <h1 class="text-5xl font-bold whitespace-nowrap"> Orange Splash</h1>
+                        <h1 class="text-3xl md:text-5xl font-bold"> Orange Splash</h1>
                         <div class="flex mt-5">
                             <h1>
-                                <span class=" font-medium text-xl"> 2022</span>
+                                <span class="font-medium text-lg md:text-xl"> 2022</span>
                             </h1>
                             <img src="arrow svg.svg" class="w-[30%]" alt="">
-                            <h1 class=" font-medium text-xl ">Mumbai</h1>
+                            <h1 class="font-medium text-lg md:text-xl ">Mumbai</h1>
                         </div>
                        
                     </div>
-                    <div class="w-full h-[400px]">
+                    <div class="w-full h-[300px] md:h-[400px]">
                         <img src="night.jpg " class="object-cover w-full h-full mt-5" alt="">
                     </div>
                 </div>
-                <div class=" palm w-[65%] pt-20">
+                <div class="palm w-full md:w-[65%] pt-10 md:pt-20">
                     <div class="w-full">
-                        <h1 class="text-5xl font-bold "> Palm Jumerah</h1>
+                        <h1 class="text-3xl md:text-5xl font-bold "> Palm Jumerah</h1>
                         <div class="flex mt-5">
                             <h1>
-                                <span class=" font-medium text-xl"> 2025</span>
+                                <span class="font-medium text-lg md:text-xl"> 2025</span>
                             </h1>
                             <img src="arrow svg.svg" class="w-[15%]" alt="">
-                            <h1 class=" font-medium text-xl ">Dubai</h1>
+                            <h1 class="font-medium text-lg md:text-xl ">Dubai</h1>
                         </div>
                        
                     </div>
-                    <div class="w-full h-[400px]">
+                    <div class="w-full h-[300px] md:h-[400px]">
                         <img src="palm.jpg" class="object-cover object-top w-full h-full mt-5" alt="">
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="footer w-5/6 flex justify-between mt-40 mb-20">
+        <footer class="footer w-11/12 md:w-5/6 flex flex-col md:flex-row justify-between mt-20 md:mt-40 mb-20">
             <div>
-                <h1 class="text-lg font-medium"> Chetram <span class="font-normal"> Patel</span></h1>
+                <h1 class="text-base md:text-lg font-medium"> Chetram <span class="font-normal"> Patel</span></h1>
             </div>
-            <h1 class="text-lg font-medium"> 10 Feb. 2025 [06:00 PM]</h1>
+            <h1 class="text-base md:text-lg font-medium mt-4 md:mt-0"> 10 Feb. 2025 [06:00 PM]</h1>
         </footer>
     </main>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>

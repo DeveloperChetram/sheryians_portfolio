@@ -1,253 +1,208 @@
- lenis = new Lenis();
+// Initialize GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true
+});
+
 function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
+    lenis.raf(time);
+    requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
 
-gsap.from('.nav',{
-    opacity:0,
-    delay:.5,
-    duration:.9
-})
-gsap.from(".cards-1", {
+// Initial load animations
+const initialAnimations = gsap.timeline();
 
+initialAnimations
+    .from('.nav', {
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power2.out'
+    })
+    .from('.heading', {
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power2.out'
+    }, '-=0.5')
+    .from('.hero', {
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out'
+    }, '-=0.5');
+
+// Scroll animations
+// Hero section animation
+gsap.from('.hero', {
     y: 100,
-    scale:0.5,
-    duration: 1,
-    opacity: 0.5,
+    scale: 0.95,
+    duration: 1.5,
     scrollTrigger: {
-        start: '40% 80%',
-        end: 'bottom bottom',
-        // markers  : true,
-        scrub: true,
-        trigger: '.page-2',
-        // stagger:1
-        // pin:true
-    }
-
-})
-gsap.from(".cards-2", {
-
-    y: 100,
-    scale:0.5,
-    duration: 1,
-    opacity: 0.5,
-    scrollTrigger: {
-        start: '40% 80%',
-        end: 'bottom bottom',
-        // markers  : true,
-        scrub: true,
-        trigger: '.page-3',
-        // stagger:1
-        // pin:true
-    }
-
-})
-
-gsap.from('.heading',{
-    opacity:0,
-    delay:1,
-    duration:.9
-})
-gsap.from(".hero",{
-    opacity:0,
-    delay:1.3
-})
-gsap.from(".hero", {
-    effects:true,
-    // smoothTouch:0.1,
-    y: 300,
-    scale:.9,
-    duration: 2,
-    // opacity: 0,
-    scrollTrigger: {
+        trigger: '.hero-div',
         start: 'top 60%',
         end: 'bottom bottom',
-        // markers: true,
-        // pin:true,
-        scrub: true,
-        trigger: '.hero-div',
-        // stagger:1
-        // pin:true
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
+});
 
-})
-
-gsap.from('.icon-1',{
-    x:-200,
-    opacity:0,
-    duration:1,
-    rotate:-75,
+// Cards animations
+gsap.from('.cards-1', {
+    y: 100,
+    scale: 0.95,
+    opacity: 0,
+    duration: 1.5,
     scrollTrigger: {
+        trigger: '.page-2',
         start: 'top 70%',
         end: 'bottom bottom',
-        // markers: true,
-        scrub: true,
-        trigger: '.icon-div',
-        // stagger:1
-        // pin:true
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
+});
 
-
-})
-gsap.from('.icon-2',{
-    x:200,
-    opacity:0,
-    duration:1,
-    rotate:75,
+gsap.from('.cards-2', {
+    y: 100,
+    scale: 0.95,
+    opacity: 0,
+    duration: 1.5,
     scrollTrigger: {
+        trigger: '.page-3',
         start: 'top 70%',
         end: 'bottom bottom',
-        // markers: true,
-        scrub: true,
-        trigger: '.icon-div',
-        // stagger:1
-        // pin:true
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
+});
 
-
-})
-gsap.from('.icon-3',{
-    x:-200,
-    y:200,
-    opacity:0,
-    delay:1,
-    duration:2,
-    rotate:75,
+// Icons animations
+const iconsTimeline = gsap.timeline({
     scrollTrigger: {
-        start: 'top 50%',
-        end: 'bottom bottom',
-        // markers: true,
-        scrub: true,
         trigger: '.icon-div',
-        // stagger:1
-        // pin:true
+        start: 'top 70%',
+        end: 'bottom bottom',
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
-})
-gsap.from('.icon-4',{
-    x:200,
-    y:200,
-    opacity:0,
-    delay:1,
-    duration:2,
-    rotate:75,
+});
+
+iconsTimeline
+    .from('.icon-1', {
+        x: -50,
+        opacity: 0,
+        rotate: -30,
+        duration: 1.2,
+        ease: 'power2.out'
+    })
+    .from('.icon-2', {
+        x: 50,
+        opacity: 0,
+        rotate: 30,
+        duration: 1.2,
+        ease: 'power2.out'
+    }, '-=0.8')
+    .from('.icon-3', {
+        x: -50,
+        opacity: 0,
+        rotate: 30,
+        duration: 1.2,
+        ease: 'power2.out'
+    }, '-=0.8')
+    .from('.icon-4', {
+        x: 50,
+        opacity: 0,
+        rotate: -30,
+        duration: 1.2,
+        ease: 'power2.out'
+    }, '-=0.8')
+    .from('.text-para', {
+        opacity: 0,
+        y: 30,
+        duration: 1.2,
+        ease: 'power2.out'
+    }, '-=0.8');
+
+// Great section animation
+gsap.from('.great', {
+    opacity: 0,
+    y: 50,
+    scale: 0.95,
+    duration: 1.5,
     scrollTrigger: {
-        start: 'top 50%',
+        trigger: '.great-div',
+        start: 'top 70%',
         end: 'bottom bottom',
-        // markers: true,
-        scrub: true,
-        trigger: '.icon-div',
-        // stagger:1
-        // pin:true
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
-})
-gsap.from('.text-para',{
-    opacity:0,
-    delay:1,
-    // y:20,
-    duration:2,
+});
+
+// Testimonials animation
+gsap.from('.testi', {
+    x: -50,
+    opacity: 0,
+    duration: 1.5,
     scrollTrigger: {
-        start: 'top 50%',
+        trigger: '.testi-div',
+        start: 'top 80%',
+        end: 'top 30%',
+        scrub: 1,
+        toggleActions: 'play none none reverse'
+    }
+});
+
+// Britannia section animations
+const britTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.brit-div',
+        start: 'top 80%',
+        end: 'top 30%',
+        scrub: 1,
+        toggleActions: 'play none none reverse'
+    }
+});
+
+britTimeline
+    .from('.brit-text', {
+        y: -30,
+        opacity: 0,
+        duration: 1
+    })
+    .from('.brit-img', {
+        scale: 1.1,
+        opacity: 0,
+        duration: 1
+    }, '-=0.5');
+
+// Last section animations
+const lastSectionTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.last-div',
+        start: 'top 70%',
         end: 'bottom bottom',
-        // markers: true,
-        scrub: true,
-        trigger: '.icon-div',
-        // stagger:1
-        // pin:true
+        scrub: 1,
+        toggleActions: 'play none none reverse'
     }
-})
+});
 
-gsap.from('.great',{
-   opacity:0,
-   y:50,
-   scale:.9,
-    duration:2,
-    scrollTrigger:{
-        start:"top 50%",
-        end:"bottom 50%",
-        // markers:true,
-        scrub: true,
-        trigger:'.great-div',
-        stagger:1
-        
-    }
-})
-
-gsap.from(".testi",{
-    x:-100,
-    opacity:0,
-    scrollTrigger:{
-        scrub: true,
-        // markers:true,
-        start:"top 80%",
-        end:"top 30%",
-        trigger:".testi-div"
-    }
-})
-gsap.from(".brit-img",{
-    // x:-100,
-    scale:1.2,
-    // opacity:0,
-    scrollTrigger:{
-        scrub: true,
-        // markers:true,
-        start:"top 80%",
-        end:"top 30%",
-        trigger:".brit-div"
-    }
-})
-gsap.from(".brit-text",{
-    // x:-100,
-    // scale:1.2,
-    y:-50,
-    opacity:0,
-    scrollTrigger:{
-        scrub: true,
-        // markers:true,
-        start:"top 80%",
-        end:"top 30%",
-        trigger:".brit-div"
-    }
-})
-
-gsap.from(".orange",{
-    x:-100,
-    opacity:0,
-    scrollTrigger:{
-        start:"top 70%",
-        end:"bottom bottom",
-        trigger:".last-div",
-        // markers:true,
-        scrub:true
-     }
-})
-
-gsap.from(".palm",{
-    x:200,
-    opacity:0,
-
-    onComplete(){
-        gsap.from(".footer",{
-            // x:200,
-            y:20,
-            delay:.5,
-            opacity:0,
-            // scrollTrigger:{
-            //     start:"top 70%",
-            //     end:"bottom bottom",
-            //     trigger:".last-div",
-            //     markers:true,
-            //     scrub:true
-            //  }
-        })
-    },
-    scrollTrigger:{
-        start:"top 70%",
-        end:"bottom bottom",
-        trigger:".last-div",
-        // markers:true,
-        scrub:true
-     }
-})
+lastSectionTimeline
+    .from('.orange', {
+        x: -50,
+        opacity: 0,
+        duration: 1
+    })
+    .from('.palm', {
+        x: 50,
+        opacity: 0,
+        duration: 1
+    }, '-=0.5')
+    .from('.footer', {
+        y: 20,
+        opacity: 0,
+        duration: 1
+    }, '-=0.5');
 
